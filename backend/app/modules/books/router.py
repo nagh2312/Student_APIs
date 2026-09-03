@@ -13,6 +13,7 @@ from app.core.config import get_settings
 from app.core.dependencies import optional_api_key
 from app.core.exceptions import NotFoundError, ProviderError
 from app.core.responses import clamp_pagination, success
+from app.data import books as load_books
 
 router = APIRouter(prefix="/books", tags=["Books"])
 
@@ -32,64 +33,7 @@ class BookOut(BaseModel):
     source: str = "mock"
 
 
-MOCK_BOOKS: list[dict] = [
-    {
-        "id": "ol-pride",
-        "title": "Pride and Prejudice",
-        "authors": ["Jane Austen"],
-        "isbn": "0141439513",
-        "isbn13": "9780141439518",
-        "publisher": "Penguin",
-        "publish_date": "1813",
-        "categories": ["Fiction", "Romance"],
-        "language": "en",
-        "description": "A classic novel of manners and marriage in Georgian England.",
-        "cover_url": "https://covers.openlibrary.org/b/id/8228691-M.jpg",
-        "source": "mock",
-    },
-    {
-        "id": "ol-1984",
-        "title": "Nineteen Eighty-Four",
-        "authors": ["George Orwell"],
-        "isbn": "0451524934",
-        "isbn13": "9780451524935",
-        "publisher": "Signet",
-        "publish_date": "1949",
-        "categories": ["Fiction", "Dystopian"],
-        "language": "en",
-        "description": "A dystopian novel about totalitarianism and surveillance.",
-        "cover_url": None,
-        "source": "mock",
-    },
-    {
-        "id": "ol-sapiens",
-        "title": "Sapiens: A Brief History of Humankind",
-        "authors": ["Yuval Noah Harari"],
-        "isbn": "0062316095",
-        "isbn13": "9780062316097",
-        "publisher": "Harper",
-        "publish_date": "2015",
-        "categories": ["History", "Science"],
-        "language": "en",
-        "description": "A narrative history of humankind from cognitive revolution to present.",
-        "cover_url": None,
-        "source": "mock",
-    },
-    {
-        "id": "ol-clean-code",
-        "title": "Clean Code",
-        "authors": ["Robert C. Martin"],
-        "isbn": "0132350882",
-        "isbn13": "9780132350884",
-        "publisher": "Prentice Hall",
-        "publish_date": "2008",
-        "categories": ["Software Engineering"],
-        "language": "en",
-        "description": "A handbook of agile software craftsmanship.",
-        "cover_url": None,
-        "source": "mock",
-    },
-]
+MOCK_BOOKS: list[dict] = load_books()
 
 
 class BooksProvider(ABC):

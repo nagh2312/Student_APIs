@@ -17,10 +17,10 @@ Every external dataset or provider used by this platform.
 | Update frequency | Periodic re-ingest (manual / scheduled) |
 | Fields | name, country, alpha_two_code, state-province, domains, web_pages |
 | Restrictions | MIT terms; retain copyright notice |
-| Ingestion | `backend/scripts/ingest/universities.py` |
-| Last documented | 2026-09-02 |
+| Ingestion | `backend/scripts/ingest/universities.py` → `backend/app/data/universities.json` |
+| Last documented | 2026-09-03 |
 
-Also used in **mock mode**: curated sample subset labeled as demo data.
+Mock/offline mode serves the **full bundled Hipo list** (~10,000 universities). Use pagination (`page`, `limit`; max `limit=100`) to page through results; check `meta.total` for the full count.
 
 ---
 
@@ -28,17 +28,17 @@ Also used in **mock mode**: curated sample subset labeled as demo data.
 
 | Field | Value |
 |-------|-------|
-| Source | [restcountries.com](https://restcountries.com) (v3.1) / embedded open subset |
-| URL | https://restcountries.com |
-| License | Data from public domain / open country datasets; API ToS apply when calling live |
-| Attribution | restcountries project |
-| Update frequency | On seed / mock refresh |
-| Fields | name, cca2, cca3, capital, region, subregion, languages, currencies, timezones, latlng |
-| Restrictions | Prefer embedded/seeded open subset for redistribution; live calls subject to provider ToS |
-| Ingestion | `backend/scripts/seed/countries.py` |
-| Last documented | 2026-09-02 |
+| Source | [mledoze/countries](https://github.com/mledoze/countries) (bundled seed) |
+| URL | https://github.com/mledoze/countries |
+| License | Open Data / project terms — see upstream repository |
+| Attribution | mledoze/countries contributors |
+| Update frequency | Re-generate `backend/app/data/countries.json` periodically |
+| Fields | ISO codes, capital, region, currencies, languages, timezones, lat/lng |
+| Restrictions | Prefer bundled seed for redistribution; do not scrape restricted APIs |
+| Ingestion | Seed file under `backend/app/data/countries.json` |
+| Last documented | 2026-09-03 |
 
-Mock mode ships a verified sample of major countries for offline use.
+Demo `states` / `cities` arrays are enriched for a few common country codes (US, IN, GB, …) and labeled as sample place lists.
 
 ---
 

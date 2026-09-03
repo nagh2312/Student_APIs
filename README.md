@@ -132,6 +132,9 @@ Use this platform whenever you need reliable, documented HTTP APIs for academic 
 
 Anonymous access is enabled for read APIs. Optional API keys unlock higher rate limits.
 
+**Dataset sizes (mock / offline mode):** universities ≈ 10,000 · countries = 250 · books = 25.  
+List endpoints paginate by default (`page=1`, `limit=20`, max `limit=100`). Use `meta.total` and `has_next` to fetch the full set.
+
 Full method matrix and paths: see [docs/API-STANDARDS.md](docs/API-STANDARDS.md) and Swagger at `/docs`.
 
 ---

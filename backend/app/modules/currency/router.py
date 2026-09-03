@@ -28,9 +28,21 @@ COMMON_CURRENCIES = [
     {"code": "CHF", "name": "Swiss Franc"},
     {"code": "CNY", "name": "Chinese Yuan"},
     {"code": "BRL", "name": "Brazilian Real"},
+    {"code": "MXN", "name": "Mexican Peso"},
+    {"code": "KRW", "name": "South Korean Won"},
+    {"code": "SGD", "name": "Singapore Dollar"},
+    {"code": "NZD", "name": "New Zealand Dollar"},
+    {"code": "SEK", "name": "Swedish Krona"},
+    {"code": "NOK", "name": "Norwegian Krone"},
+    {"code": "DKK", "name": "Danish Krone"},
+    {"code": "ZAR", "name": "South African Rand"},
+    {"code": "HKD", "name": "Hong Kong Dollar"},
+    {"code": "AED", "name": "UAE Dirham"},
 ]
 
+# Deterministic mock FX rates vs USD (educational demo — not live market data)
 MOCK_RATES_USD = {
+    "USD": 1.0,
     "EUR": 0.92,
     "GBP": 0.79,
     "JPY": 149.5,
@@ -40,7 +52,16 @@ MOCK_RATES_USD = {
     "CHF": 0.88,
     "CNY": 7.24,
     "BRL": 5.05,
-    "USD": 1.0,
+    "MXN": 17.1,
+    "KRW": 1330.0,
+    "SGD": 1.34,
+    "NZD": 1.64,
+    "SEK": 10.5,
+    "NOK": 10.8,
+    "DKK": 6.86,
+    "ZAR": 18.7,
+    "HKD": 7.82,
+    "AED": 3.67,
 }
 
 
