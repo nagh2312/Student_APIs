@@ -1,0 +1,31 @@
+name: Bug Report
+description: Report a bug in an API or the developer portal
+labels: ["bug"]
+body:
+  - type: textarea
+    id: describe
+    attributes:
+      label: Description
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: input
+    id: endpoint
+    attributes:
+      label: Endpoint / page
+      placeholder: GET /v1/universities
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      placeholder: 0.1.0

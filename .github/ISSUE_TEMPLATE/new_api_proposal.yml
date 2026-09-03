@@ -1,0 +1,64 @@
+name: New API Proposal
+description: Propose a new standardized API for the platform
+labels: ["api-proposal"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 1. Problem statement
+    validations:
+      required: true
+  - type: textarea
+    id: use_cases
+    attributes:
+      label: 2. Student use cases
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 3. Existing alternatives
+    validations:
+      required: true
+  - type: textarea
+    id: why_insufficient
+    attributes:
+      label: 4. Why they are insufficient
+    validations:
+      required: true
+  - type: textarea
+    id: endpoints
+    attributes:
+      label: 5. Proposed endpoints
+    validations:
+      required: true
+  - type: textarea
+    id: schema
+    attributes:
+      label: 6. Proposed schema
+    validations:
+      required: true
+  - type: textarea
+    id: data_source
+    attributes:
+      label: 7. Data source
+    validations:
+      required: true
+  - type: textarea
+    id: license
+    attributes:
+      label: 8. License
+    validations:
+      required: true
+  - type: textarea
+    id: maintenance
+    attributes:
+      label: 9. Maintenance plan
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: 10. Security / privacy considerations
+    validations:
+      required: true

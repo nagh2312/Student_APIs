@@ -1,0 +1,36 @@
+name: Data Source Proposal
+description: Propose a dataset or provider for an existing or new API
+labels: ["data-source"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Source name
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License
+    validations:
+      required: true
+  - type: textarea
+    id: fields
+    attributes:
+      label: Fields / coverage
+  - type: textarea
+    id: restrictions
+    attributes:
+      label: Restrictions / attribution requirements
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: Which API would use this?

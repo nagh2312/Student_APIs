@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f7f8fa;
+  --foreground: #0f172a;
+  --muted: #e8edf3;
+  --muted-foreground: #475569;
+  --border: #dbe3ee;
+  --card: #ffffff;
+  --surface: #eef2f7;
+  --primary: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --primary-soft: #e8effc;
+  --accent: #0f766e;
+  --accent-foreground: #ffffff;
+  --accent-soft: #e6f4f2;
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #b91c1c;
+  --ring: #93c5fd;
+  --grid-line: rgba(15, 23, 42, 0.045);
+  --hero-glow: rgba(29, 78, 216, 0.12);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(ellipse 90% 50% at 100% 0%, rgba(15, 118, 110, 0.06), transparent 50%),
+      radial-gradient(ellipse 70% 40% at 0% 0%, rgba(29, 78, 216, 0.07), transparent 45%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--primary) 22%, white);
+  }
+
+  a {
+    @apply underline-offset-4;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+
+  .section-space {
+    @apply py-16 sm:py-20;
+  }
+}

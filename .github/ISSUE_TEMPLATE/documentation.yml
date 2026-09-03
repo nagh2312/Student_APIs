@@ -1,0 +1,19 @@
+name: Documentation Improvement
+description: Suggest docs or portal improvements
+labels: ["documentation"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page / file
+      placeholder: docs/API-STANDARDS.md
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is unclear or missing?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement
