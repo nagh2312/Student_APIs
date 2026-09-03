@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: Weather API
+  version: 1.0.0
+paths:
+  /weather:
+    get:
+      summary: Current weather
+      parameters:
+        - { in: query, name: lat, required: true, schema: { type: number } }
+        - { in: query, name: lon, required: true, schema: { type: number } }
+      responses:
+        "200": { description: Normalized current weather }
+  /weather/forecast:
+    get:
+      summary: Forecast
+      responses:
+        "200": { description: Daily forecast }
+  /weather/historical:
+    get:
+      summary: Historical weather
+      responses:
+        "200": { description: Historical day summary }
